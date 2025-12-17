@@ -1,14 +1,11 @@
 // =============================
-// Very Simple Data Cleaner JS
+// Data Cleaner JS
 // =============================
-// Features:
 // 1. Upload a CSV file
 // 2. Show a preview (first 10 rows)
 // 3. Show simple stats (rows, columns, missing, duplicates)
 // 4. Clean data (remove duplicate rows, fill missing numeric values)
 // 5. Download cleaned data as a new CSV
-
-// We will only support CSV to keep things simple.
 
 // ------------
 // 1. Variables
@@ -31,20 +28,16 @@ downloadBtn.disabled = true;
 // --------------------
 // 2. Event Listeners
 // --------------------
-
 // When a file is chosen, read it
 fileInput.addEventListener('change', handleFileUpload);
-
 // When "Clean Data" is clicked
 cleanBtn.addEventListener('click', cleanData);
-
 // When "Download" is clicked
 downloadBtn.addEventListener('click', downloadCleanedData);
 
 // -----------------------
 // 3. Helper: parse CSV
 // -----------------------
-
 // Turn CSV text into an array of row objects
 // Example:
 // Name,Age
@@ -286,3 +279,4 @@ function convertToCSV(data) {
 
     return csv;
 }
+
