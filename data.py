@@ -1,5 +1,5 @@
 """
-A simple data cleaning script for students.
+A simple data cleaning script using python as opposed to JavaScript.
 This script shows how to work with CSV files without any special libraries.
 """
 
@@ -69,3 +69,4 @@ if __name__ == "__main__":
 
     except FileNotFoundError:
         print("\nError: Make sure you have a file named 'data.csv' in the same folder.")
+
