@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Cleaning Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>📊 Data Cleaning Dashboard</h1>
+            <p>Clean, analyze, and visualize your data</p>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Sidebar - Upload and Controls -->
+            <aside class="sidebar">
+                <div class="card">
+                    <h2>Upload Data</h2>
+                    <input type="file" id="fileInput" accept=".csv,.xlsx,.json" class="file-input">
+                    <p class="info-text">Supported formats: CSV, Excel, JSON</p>
+                </div>
+
+                <div class="card">
+                    <h2>Data Info</h2>
+                    <div id="dataInfo" class="info-box">
+                        <p>No data loaded yet</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Cleaning Options</h2>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="removeDuplicates" checked>
+                        Remove Duplicates
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="handleMissing" checked>
+                        Handle Missing Values
+                    </label>
+                    <button id="cleanBtn" class="btn btn-primary">Clean Data</button>
+                </div>
+
+                <div class="card">
+                    <h2>Export</h2>
+                    <button id="downloadBtn" class="btn btn-secondary" disabled>Download Clean Data</button>
+                </div>
+            </aside>
+
+            <!-- Main Dashboard Area -->
+            <main class="dashboard">
+                <!-- Statistics Cards -->
+                <section class="stats-section">
+                    <div class="stat-card">
+                        <h3>Total Rows</h3>
+                        <p id="rowCount" class="stat-value">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Columns</h3>
+                        <p id="colCount" class="stat-value">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Missing Values</h3>
+                        <p id="missingCount" class="stat-value">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Duplicates Found</h3>
+                        <p id="dupCount" class="stat-value">0</p>
+                    </div>
+                </section>
+
+                <!-- Charts Section -->
+                <section class="charts-section">
+                    <div class="chart-card">
+                        <h3>Missing Values by Column</h3>
+                        <canvas id="missingChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Data Type Distribution</h3>
+                        <canvas id="typeChart"></canvas>
+                    </div>
+                </section>
+
+                <!-- Data Preview -->
+                <section class="preview-section">
+                    <h2>Data Preview</h2>
+                    <div id="preview" class="table-container">
+                        <p>Upload a file to see data preview</p>
+                    </div>
+                </section>
+
+                <!-- Cleaning Report -->
+                <section id="reportSection" class="report-section" style="display: none;">
+                    <h2>Cleaning Report</h2>
+                    <div id="cleaningReport" class="report-box"></div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="functionality.js"></script>
+</body>
+</html>

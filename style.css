@@ -1,0 +1,350 @@
+/* The asterisk (*) is a "universal selector". It selects ALL elements on the page. */
+* {
+    /* Reset default browser styles */
+    margin: 0; /* Remove default spacing outside elements */
+    padding: 0; /* Remove default spacing inside elements */
+
+    /* This is a very important rule for layout. It makes sizing elements more predictable.
+       Padding and borders will be included in the element's total width and height, not added on top. */
+    box-sizing: border-box;
+}
+
+/* Styles for the main body of the page */
+body {
+    /* Sets the default font for the whole page. If 'Segoe UI' isn't available, it tries the next one. */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* Creates a smooth color transition from a light purple to a darker purple for the background. */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    
+    /* Ensures the body takes up at least the full height of the browser window. */
+    min-height: 100vh;
+    
+    /* Sets the default text color for the page. */
+    color: #333;
+}
+
+/* A general container to hold the main content and keep it centered. */
+.container {
+    /* The dashboard won't get wider than 1400 pixels. */
+    max-width: 1400px;
+    
+    /* 'margin: 0 auto' is a common trick to center a block-level element horizontally. */
+    margin: 0 auto;
+    
+    /* Adds 20 pixels of space (padding) on all sides inside the container. */
+    padding: 20px;
+}
+
+/* Header Section */
+.header {
+    background: white; /* White background for the header card */
+    padding: 30px; /* Generous internal spacing */
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 30px; /* Space below the header */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* A subtle shadow to make it "pop" */
+}
+
+/* The main title (h1) inside the header */
+.header h1 {
+    color: #667eea; /* A nice purple color for the title */
+    font-size: 2.5em; /* Makes the font size 2.5 times the default */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+/* The paragraph (p) inside the header */
+.header p {
+    color: #666; /* A soft gray color for the subtitle */
+    font-size: 1.1em; /* Slightly larger than default text */
+}
+
+/* Main Layout Grid */
+.main-content {
+    display: grid; /* Use CSS Grid, a powerful tool for creating layouts */
+    
+    /* Defines two columns: the first is 300px wide, the second (1fr) takes up the remaining space. */
+    grid-template-columns: 300px 1fr;
+    
+    /* Creates a 30px gap between the grid columns. */
+    gap: 30px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    display: flex; /* Use Flexbox for layout within the sidebar */
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Add a 20px gap between each card in the sidebar */
+}
+
+/* General styles for all cards (the white boxes) */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* The title (h2) inside each card */
+.card h2 {
+    color: #667eea;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #667eea; /* A purple line under the title */
+    padding-bottom: 10px; /* Space between the text and the line */
+}
+
+/* The file upload input field */
+.file-input {
+    display: block; /* Make it a block-level element to take up the full width */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px dashed #667eea; /* A dashed purple border */
+    border-radius: 5px;
+    cursor: pointer; /* Show a pointer hand when hovering */
+}
+
+/* Small informational text */
+.info-text {
+    font-size: 0.9em;
+    color: #999; /* Light gray color */
+}
+
+/* The box that shows data info */
+.info-box {
+    background: #f8f9fa; /* A very light gray background */
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 0.95em;
+    line-height: 1.6; /* Increase space between lines of text */
+}
+
+/* The label for each checkbox */
+.checkbox-label {
+    display: flex; /* Use flexbox to align the checkbox and text */
+    align-items: center; /* Vertically center the items */
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 0.95em;
+}
+
+/* The actual checkbox input */
+.checkbox-label input {
+    margin-right: 10px; /* Space between the box and the text */
+    cursor: pointer;
+    width: 18px; /* Custom size */
+    height: 18px;
+}
+
+/* --- Button Styles --- */
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    width: 100%;
+    font-weight: 600; /* Bolder text */
+}
+
+/* Primary button style (e.g., "Clean Data") */
+.btn-primary {
+    background: #667eea;
+    color: white;
+    margin-top: 10px;
+}
+
+/* Style for when the mouse hovers over the primary button */
+.btn-primary:hover {
+    background: #5568d3; /* A slightly darker purple */
+    transform: translateY(-2px); /* Move the button up slightly */
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4); /* Add a glowing shadow */
+}
+
+/* Style for when a button is disabled */
+.btn:disabled {
+    background: #ccc; /* Gray background */
+    cursor: not-allowed; /* Show a "not allowed" cursor */
+    transform: none; /* Remove any hover effects */
+}
+
+/* Secondary button style (e.g., "Download") */
+.btn-secondary {
+    background: #48bb78; /* A green color */
+    color: white;
+    margin-top: 10px;
+}
+
+.btn-secondary:hover {
+    background: #38a169; /* A darker green on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+}
+
+/* --- Dashboard Area --- */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Statistics Cards Section */
+.stats-section {
+    display: grid;
+    /* Create a responsive grid. Columns will be at least 200px wide, and will wrap automatically. */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the text inside */
+    border-left: 4px solid #667eea; /* A purple accent line on the left */
+}
+
+.stat-card h3 {
+    color: #666;
+    font-size: 0.95em;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* The large number in the stat card */
+.stat-value {
+    color: #667eea;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* Charts Section */
+.charts-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.chart-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chart-card h3 {
+    color: #667eea;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+/* The canvas element where charts are drawn */
+canvas {
+    max-height: 300px; /* Prevent charts from becoming too tall */
+}
+
+/* Data Preview Section */
+.preview-section {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.preview-section h2 {
+    color: #667eea;
+    margin-bottom: 20px;
+}
+
+/* The container for the preview table */
+.table-container {
+    overflow-x: auto; /* Add a horizontal scrollbar if the table is too wide */
+    max-height: 400px; /* Add a vertical scrollbar if the table is too tall */
+    overflow-y: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Collapse borders into a single line */
+    font-size: 0.9em;
+}
+
+/* The table header (thead) */
+table thead {
+    background: #f8f9fa;
+    position: sticky; /* Makes the header stick to the top when you scroll */
+    top: 0;
+}
+
+/* Table header cells (th) */
+table th {
+    padding: 12px;
+    text-align: left;
+    color: #667eea;
+    font-weight: 600;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+/* Table data cells (td) */
+table td {
+    padding: 12px;
+    border-bottom: 1px solid #e2e8f0; /* A light line between rows */
+}
+
+/* Highlight a row when the mouse hovers over it */
+table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+/* Cleaning Report Section */
+.report-section {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.report-section h2 {
+    color: #667eea;
+    margin-bottom: 20px;
+}
+
+.report-box {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace; /* Use a monospaced font for code-like text */
+    font-size: 0.95em;
+    line-height: 1.8;
+    white-space: pre-wrap; /* Preserve whitespace and wrap text */
+    word-wrap: break-word;
+}
+
+/* --- Responsive Design --- */
+/* These rules apply only when the screen is 1024px wide or less. */
+@media (max-width: 1024px) {
+    .main-content {
+        grid-template-columns: 1fr; /* Stack the sidebar and dashboard on top of each other */
+    }
+
+    .charts-section {
+        grid-template-columns: 1fr; /* Stack the charts vertically */
+    }
+}
+
+/* These rules apply only when the screen is 768px wide or less (e.g., tablets and phones). */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.8em; /* Make the main title smaller */
+    }
+
+    .stats-section {
+        grid-template-columns: repeat(2, 1fr); /* Show two stat cards per row */
+    }
+
+    .table-container {
+        max-height: 300px; /* Make the table preview shorter */
+    }
+}
